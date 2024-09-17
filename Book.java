@@ -3,8 +3,8 @@
  * This might form part of a larger application such
  * as a library system, for instance.
  *
- * @author (Insert your name here.)
- * @version (Insert today's date here.)
+ * @author (Andrew Parvaneh)
+ * @version (9/17/24)
  */
 class Book
 {
@@ -13,6 +13,7 @@ class Book
     private String title;
     private int pages;
     private String refNumber;
+    private int borrowed;
 
     /**
      * Set the author, title, pages fields and initialize the reference number 
@@ -24,6 +25,7 @@ class Book
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        borrowed = 0;
     }
     
     /**
@@ -72,6 +74,24 @@ class Book
     }
     
     /**
+     * This method increases the borrowed count by 1 each time it is called.
+     * This method satisfies the requirement of problem 2.91
+     */
+    public void borrow()
+    {
+        borrowed++;
+    }
+    
+    /**
+     * This method returns the number of times the book has been borrowed.
+     * This method satisfies the requirement of problem 2.91
+     */
+    public int getBorrowed()
+    {
+        return borrowed;
+    }
+    
+    /**
      * This method satisfies the requirement of problem 2.87
      * This method satisfies the requirement of problem 2.89
      * Prints the details of the book to the terminal.
@@ -79,7 +99,7 @@ class Book
     public void printDetails()
     {
         String refToPrint = (refNumber.length() > 0) ? refNumber : "ZZZ";
-        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Ref Number: " + refToPrint);
+        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Ref Number: " + refToPrint + ", Times Borrowed: " + borrowed);
     }
     
     /**      
