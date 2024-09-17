@@ -39,4 +39,22 @@ class Book
     {
         return title;
     }
+    
+    /**
+     * This method satisfies the requirement of problem 2.84
+     * Prints the author of the book to the terminal.
+     */
+    public void printAuthor()
+    {
+        System.out.println("Author: " + author);
+    }
+    
+    /**
+     * This method satisfies the requirement of problem 2.84
+     * Prints the title of the book to the terminal.
+     */
+    public void printTitle()
+    {
+        System.out.println("Title: " + title);
+    }
 }
