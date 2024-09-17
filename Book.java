@@ -73,11 +73,13 @@ class Book
     
     /**
      * This method satisfies the requirement of problem 2.87
+     * This method satisfies the requirement of problem 2.89
      * Prints the details of the book to the terminal.
      */
     public void printDetails()
     {
-        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages);
+        String refToPrint = (refNumber.length() > 0) ? refNumber : "ZZZ";
+        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Ref Number: " + refToPrint);
     }
     
     /**      
