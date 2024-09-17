@@ -14,18 +14,20 @@ class Book
     private int pages;
     private String refNumber;
     private int borrowed;
+    private final boolean courseText;
 
     /**
-     * Set the author, title, pages fields and initialize the reference number 
-     * when this object is constructed.
+     * Set the author, title, pages fields, initialize the reference number,
+     * and set the courseText field when this object is constructed.
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages)
+    public Book(String bookAuthor, String bookTitle, int bookPages, boolean isCourseText)
     {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
         borrowed = 0;
+        courseText = isCourseText;
     }
     
     /**
@@ -74,6 +76,15 @@ class Book
     }
     
     /**
+     * This method returns whether the book is a course text.
+     * satisfies the requirement of problem 2.92
+     */
+    public boolean isCourseText()
+    {
+        return courseText;
+    }
+    
+    /**
      * This method increases the borrowed count by 1 each time it is called.
      * This method satisfies the requirement of problem 2.91
      */
@@ -99,7 +110,9 @@ class Book
     public void printDetails()
     {
         String refToPrint = (refNumber.length() > 0) ? refNumber : "ZZZ";
-        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Ref Number: " + refToPrint + ", Times Borrowed: " + borrowed);
+        System.out.println("Title: " + title + ", Author: " + author + 
+        ", Pages: " + pages + ", Ref Number: " + refToPrint + 
+        ", Times Borrowed: " + borrowed + ", Course Text: " + (courseText ? "Yes" : "No"));
     }
     
     /**      
